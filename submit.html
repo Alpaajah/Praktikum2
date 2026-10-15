@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      background: #fbf1e0;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px 15px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1px solid #7fb2c9;
+      padding-bottom: 6px;
+    }
+    h2 {
+      color: #d9603b;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .info {
+      margin-left: 35px;
+      line-height: 1.4;
+    }
+    footer {
+      border-top: 1px solid #d9a455;
+      margin-top: 25px;
+      padding-top: 6px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank You</h1>
+
+  <p>
+    Thank you for ordering from Black Goose Bistro. We have received the
+    following information about your order:
+  </p>
+
+  <h2>Your Information</h2>
+  <div class="info">
+    <strong>Name:</strong> <span id="name"></span><br>
+    <strong>Address:</strong> <span id="address"></span><br>
+    <strong>Telephone number:</strong> <span id="telephone"></span><br>
+    <strong>Email Address:</strong> <span id="email"></span>
+  </div>
+
+  <p><strong>Delivery instructions:</strong> <span id="instruction"></span></p>
+
+  <h2>Your pizza</h2>
+  <div class="info">
+    <strong>Crust:</strong> <span id="crust"></span><br>
+    <strong>Toppings:</strong> <span id="toppings"></span><br>
+    <strong>Number:</strong> <span id="number"></span>
+  </div>
+
+  <footer>This site is for educational purposes only. No pizzas will be delivered.</footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    function show(id, value) {
+      // textContent supaya input user tidak dieksekusi sebagai HTML
+      document.getElementById(id).textContent = value || "-";
+    }
+
+    show("name", params.get("customername"));
+    show("address", params.get("addres"));
+    show("telephone", params.get("telephone"));
+    show("email", params.get("email"));
+    show("instruction", params.get("instruction"));
+    show("crust", params.get("crust"));
+    show("toppings", params.getAll("toppings").join(", "));
+    show("number", params.get("number"));
+  </script>
+</body>
+</html>

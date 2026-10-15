@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js"></script>
+  <title>form.html</title>
+</head>
+<body>
+  <h1>Form Pemesanan Pizza</h1>
+  <p>Silahkan isi informasi dengan lengkap dan benar</p>
+
+  <!-- SATU form saja, membungkus semua fieldset -->
+  <form action="submit.html" method="get">
+
+    <fieldset>
+      <legend>Informasi Pemesanan</legend>
+      <p>
+        <label for="customername">Nama:</label>
+        <input type="text" id="customername" name="customername" required>
+      </p>
+      <p>
+        <label for="addres">Alamat:</label>
+        <input type="text" id="addres" name="addres" required>
+      </p>
+      <p>
+        <label for="telephone">Nomor Telepon:</label>
+        <input type="text" id="telephone" name="telephone" required>
+      </p>
+      <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </p>
+      <p>
+        <label for="instruction">Instruksi pengantaran:</label><br>
+        <textarea id="instruction" name="instruction" rows="4" cols="50"
+          maxlength="400" placeholder="no more than 400 character"></textarea>
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>Design Your Dream Pizza</strong></legend>
+
+      <p>Pizza Specs</p>
+      <p>(Crust) Pilih salah satu</p>
+      <p>
+        <input type="radio" id="classic" name="crust" value="classic white" required>
+        <label for="classic">Classic White</label><br>
+
+        <input type="radio" id="multigrain" name="crust" value="multigrain">
+        <label for="multigrain">Multigrain</label><br>
+
+        <input type="radio" id="cheese" name="crust" value="cheese">
+        <label for="cheese">Cheese</label><br>
+
+        <input type="radio" id="gluten-free" name="crust" value="gluten-free">
+        <label for="gluten-free">Gluten-Free</label><br>
+      </p>
+
+      <p><strong>Toppings (Choose as many as you want):</strong></p>
+
+      <input type="checkbox" id="red-sauce" name="toppings" value="red sauce" checked>
+      <label for="red-sauce">Red sauce</label><br>
+
+      <input type="checkbox" id="white-sauce" name="toppings" value="white sauce">
+      <label for="white-sauce">White sauce</label><br>
+
+      <input type="checkbox" id="mozzarella" name="toppings" value="mozzarella cheese">
+      <label for="mozzarella">Mozzarella Cheese</label><br>
+
+      <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+      <label for="pepperoni">Pepperoni</label><br>
+
+      <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+      <label for="mushrooms">Mushrooms</label><br>
+
+      <input type="checkbox" id="peppers" name="toppings" value="peppers">
+      <label for="peppers">Peppers</label><br>
+
+      <input type="checkbox" id="anchovies" name="toppings" value="anchovies">
+      <label for="anchovies">Anchovies</label>
+
+      <p><strong>Number</strong></p>
+      <label for="number">How many pizzas:</label>
+      <select id="number" name="number">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </fieldset>
+
+    <p>
+      <input type="reset" value="Reset">
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+</body>
+</html>
